@@ -1,0 +1,14 @@
+# Node.js
+backend/node_modules/
+backend/.env
+
+# Flutter / Dart
+.dart_tool/
+build/
+.idea/
+*.iml
+.metadata
+
+# OS files
+.DS_Store
+Thumbs.db

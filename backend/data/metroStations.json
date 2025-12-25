@@ -1,0 +1,42 @@
+[
+  {
+    "id": "baiyappanahalli",
+    "name": "Baiyappanahalli",
+    "lat": 12.9902,
+    "lon": 77.6527,
+    "line": "Purple",
+    "connections": ["swami_vivekananda"]
+  },
+  {
+    "id": "swami_vivekananda",
+    "name": "Swami Vivekananda Road",
+    "lat": 12.9857,
+    "lon": 77.6459,
+    "line": "Purple",
+    "connections": ["baiyappanahalli", "indiranagar"]
+  },
+  {
+    "id": "indiranagar",
+    "name": "Indiranagar",
+    "lat": 12.9784,
+    "lon": 77.6386,
+    "line": "Purple",
+    "connections": ["swami_vivekananda"]
+  },
+  {
+    "id": "majestic",
+    "name": "Majestic",
+    "lat": 12.9763,
+    "lon": 77.5713,
+    "line": "Interchange",
+    "connections": ["indiranagar", "yelahanka"]
+  },
+  {
+    "id": "yelahanka",
+    "name": "Yelahanka",
+    "lat": 13.1007,
+    "lon": 77.5963,
+    "line": "Green",
+    "connections": ["majestic"]
+  }
+]
