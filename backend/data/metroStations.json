@@ -1,42 +1,407 @@
 [
-  {
-    "id": "baiyappanahalli",
-    "name": "Baiyappanahalli",
-    "lat": 12.9902,
-    "lon": 77.6527,
-    "line": "Purple",
-    "connections": ["swami_vivekananda"]
-  },
-  {
-    "id": "swami_vivekananda",
-    "name": "Swami Vivekananda Road",
-    "lat": 12.9857,
-    "lon": 77.6459,
-    "line": "Purple",
-    "connections": ["baiyappanahalli", "indiranagar"]
-  },
-  {
-    "id": "indiranagar",
-    "name": "Indiranagar",
-    "lat": 12.9784,
-    "lon": 77.6386,
-    "line": "Purple",
-    "connections": ["swami_vivekananda"]
-  },
-  {
-    "id": "majestic",
-    "name": "Majestic",
-    "lat": 12.9763,
-    "lon": 77.5713,
-    "line": "Interchange",
-    "connections": ["indiranagar", "yelahanka"]
-  },
-  {
-    "id": "yelahanka",
-    "name": "Yelahanka",
-    "lat": 13.1007,
-    "lon": 77.5963,
-    "line": "Green",
-    "connections": ["majestic"]
-  }
+    {
+        "id": "baiyappanahalli",
+        "name": "Baiyappanahalli",
+        "lat": 12.991898254552773,
+        "lon": 77.65287394563238,
+        "line": "Purple",
+        "connections": [
+            "benniganahalli",
+            "swami_vivekananda_road"
+        ]
+    },
+    {
+        "id": "whitefield_kadugodi",
+        "name": "Whitefield (Kadugodi)",
+        "lat": 12.995487735920735, 
+        "lon": 77.75856101443354,
+        "line": "Purple",
+        "connections": [
+            "channasandra_hopefarm"
+        ]
+    },
+    {
+        "id": "channasandra_hopefarm",
+        "name": "Channasandra (Hopefarm)",
+        "lat": 12.987306594457198, 
+        "lon": 77.75450949908782,
+        "line": "Purple",
+        "connections": [
+            "whitefield_kadugodi",
+            "kadugodi_tree_park"
+        ]
+    },
+    {
+        "id": "kadugodi_tree_park",
+        "name": "Kadugodi Tree Park",
+        "lat": 12.986136336544561, 
+        "lon": 77.74708246076865,
+        "line": "Purple",
+        "connections": [
+            "channasandra_hopefarm",
+            "pattandur_agrahara"
+        ]
+    },
+    {
+        "id": "pattandur_agrahara",
+        "name": "Pattandur Agrahara",
+        "lat": 12.987810166063946, 
+        "lon": 77.73770480937712,
+        "line": "Purple",
+        "connections": [
+            "kadugodi_tree_park",
+            "srisatyasai_hospital"
+        ]
+    },
+    {
+        "id": "srisatyasai_hospital",
+        "name": "Sri Sathya Sai Hospital",
+        "lat": 12.98116226518972, 
+        "lon": 77.72759321436031,
+        "line": "Purple",
+        "connections": [
+            "pattandur_agrahara",
+            "nallurhalli"
+        ]
+    },
+    {
+        "id": "nallurhalli",
+        "name": "Nallurhalli",
+        "lat": 12.976851538889647, 
+        "lon": 77.72475199588612,
+        "line": "Purple",
+        "connections": [
+            "srisatyasai_hospital",
+            "kundalahalli"
+        ]
+    },
+    {
+        "id": "kundalahalli",
+        "name": "Kundalahalli",
+        "lat": 12.977870795769432, 
+        "lon": 77.71557852970554, 
+        "line": "Purple",
+        "connections": [
+            "nallurhalli",
+            "seetharampalya"
+        ]
+    },
+    {
+        "id": "seetharampalya",
+        "name": "Seetharam Palya",
+        "lat": 12.980958743271398, 
+        "lon": 77.7088784112317,
+        "line": "Purple",
+        "connections": [
+            "kundalahalli",
+            "hoodi"
+        ]
+    },
+    {
+        "id": "hoodi",
+        "name": "Hoodi",
+        "lat": 12.988938802219518, 
+        "lon": 77.71139618239542,
+        "line": "Purple",
+        "connections": [
+            "seetharampalya",
+            "garudacharpalya"
+        ]
+    },
+    {
+        "id": "garudacharpalya",
+        "name": "Garudacharpalya",
+        "lat": 12.993674661615184, 
+        "lon": 77.70367573821356,
+        "line": "Purple",
+        "connections": [
+            "hoodi",
+            "singayyanapalya"
+        ]
+    },
+    {
+        "id": "singayyanapalya",
+        "name": "Singayyanapalya",
+        "lat": 12.996717350894556, 
+        "lon": 77.69235894748901,
+        "line": "Purple",
+        "connections": [
+            "garudacharpalya",
+            "kr_pura"
+        ]
+    },
+    {
+        "id": "kr_pura",
+        "name": "KR Puram",
+        "lat": 13.000065925885721, 
+        "lon": 77.67764915355912,
+        "line": "Purple",
+        "connections": [
+            "singayyanapalya",
+            "benniganahalli"
+        ]
+    },
+    {
+        "id": "benniganahalli",
+        "name": "Benniganahalli",
+        "lat": 12.996655945418082, 
+        "lon": 77.66823060937723,
+        "line": "Purple",
+        "connections": [
+            "kr_pura",
+            "baiyappanahalli"
+        ]
+    },
+    {
+        "id": "swami_vivekananda_road",
+        "name": "Swami Vivekananda Road",
+        "lat": 12.985960468610926, 
+        "lon": 77.64513020948337,
+        "line": "Purple",
+        "connections": [
+            "baiyappanahalli",
+            "indiranagar"
+        ]
+    },
+    {
+        "id": "indiranagar",
+        "name": "Indiranagar",
+        "lat": 12.978251432574671, 
+        "lon": 77.63851496704979,
+        "line": "Purple",
+        "connections": [
+            "swami_vivekananda_road",
+            "halasuru"
+        ]
+    },
+    {
+        "id": "halasuru",
+        "name": "Halasuru",
+        "lat": 12.976398003410191, 
+        "lon": 77.62667201890453,
+        "line": "Purple",
+        "connections": [
+            "indiranagar",
+            "trinity"
+        ]
+    },
+    {
+        "id": "trinity",
+        "name": "Trinity",
+        "lat": 12.973331532372258, 
+        "lon": 77.61571899588613,
+        "line": "Purple",
+        "connections": [
+            "mg_road",
+            "halasuru"
+        ]
+    },
+    {
+        "id": "mg_road",
+        "name": "Mahatma Gandhi Road",
+        "lat": 12.97300028735108, 
+        "lon": 77.61676736704966,
+        "line": "Purple",
+        "connections": [
+            "trinity",
+            "cubbon_park"
+        ]
+    },
+    {
+        "id": "cubbon_park",
+        "name": "Cubbon Park",
+        "lat": 12.980911242004089, 
+        "lon": 77.59746539588619,
+        "line": "Purple",
+        "connections": [
+            "mg_road",
+            "vidhana_soudha"
+        ]
+    },
+    {
+        "id": "vidhana_soudha",
+        "name": "Vidhana Soudha",
+        "lat": 12.979702942056047, 
+        "lon": 77.5926342958862,
+        "line": "Purple",
+        "connections": [
+            "cubbon_park",
+            "central_college"
+        ]
+    },
+    {
+        "id": "central_college",
+        "name": "Central College",
+        "lat": 12.974270032410853, 
+        "lon": 77.58392433821328,
+        "line": "Purple",
+        "connections": [
+            "vidhana_soudha",
+            "magestic"
+        ]
+    },
+    {
+        "id": "magestic",
+        "name": "Kempegowda Station, Majestic",
+        "lat": 12.9756710449676, 
+        "lon": 77.57285470086886,
+        "line": "Interchange",
+        "connections": [
+            "central_college",
+            "ksr_city"
+        ]
+    },
+    {
+        "id": "ksr_city",
+        "name": "KSR City Railway Station",
+        "lat": 12.975829832475025, 
+        "lon": 77.56575609588617,
+        "line": "Purple",
+        "connections": [
+            "magestic",
+            "magadi_road"
+        ]
+    },
+    {
+        "id": "magadi_road",
+        "name": "Magadi Road",
+        "lat": 12.975626822704005, 
+        "lon": 77.55540076704972,
+        "line": "Purple",
+        "connections": [
+            "ksr_city",
+            "hosahalli"
+        ]
+    },
+    {
+        "id": "hosahalli",
+        "name": "Hosahalli",
+        "lat": 12.974302077474887, 
+        "lon": 77.54508496704973,
+        "line": "Purple",
+        "connections": [
+            "magadi_road",
+            "vijayanagar"
+        ]
+    },
+    {
+        "id": "vijayanagar",
+        "name": "Vijayanagar",
+        "lat": 12.970788322098278, 
+        "lon": 77.5373530670497,
+        "line": "Purple",
+        "connections": [
+            "hosahalli",
+            "attiguppe"
+        ]
+    },
+    {
+        "id": "attiguppe",
+        "name": "Attiguppe",
+        "lat": 12.96205930827892, 
+        "lon":77.5337045284318,
+        "line": "Purple",
+        "connections": [
+            "vijayanagar",
+            "deepanjali_nagar"
+        ]
+    },
+    {
+        "id": "deepanjali_nagar",
+        "name": "Deepanjali Nagar",
+        "lat": 12.952294990582072, 
+        "lon": 77.53695628666254,
+        "line": "Purple",
+        "connections": [
+            "attiguppe",
+            "mysuru_road"
+        ]
+    },
+    {
+        "id": "mysuru_road",
+        "name": "Mysuru Road",
+        "lat": 12.946695419084978, 
+        "lon": 77.53007389588575,
+        "line": "Purple",
+        "connections": [
+            "deepanjali_nagar",
+            "nayandahalli"
+        ]
+    },
+    {
+        "id": "nayandahalli",
+        "name": "Nayandahalli",
+        "lat": 12.946198082194732, 
+        "lon": 77.52982526561338,
+        "line": "Purple",
+        "connections": [
+            "mysuru_road",
+            "rajarajeshwari_nagar"
+        ]
+    },
+    {
+        "id": "rajarajeshwari_nagar",
+        "name": "Rajarajeshwari Nagar",
+        "lat": 12.936661617831742, 
+        "lon": 77.51955599588568,
+        "line": "Purple",
+        "connections": [
+            "nayandahalli",
+            "jnanabharathi"
+        ]
+    },
+    {
+        "id": "jnanabharathi",
+        "name": "Jnanabharathi",
+        "lat": 12.935315417663707, 
+        "lon": 77.51202943821282,
+        "line": "Purple",
+        "connections": [
+            "rajarajeshwari_nagar",
+            "pattanagere"
+        ]
+    },
+    {
+        "id": "pattanagere",
+        "name": "Pattanagere",
+        "lat": 12.924227816280027, 
+        "lon": 77.49846709588553,
+        "line": "Purple",
+        "connections": [
+            "jnanabharathi",
+            "kengeri_bus"
+        ]
+    },
+    {
+        "id": "kengeri_bus",
+        "name": "Kengeri Bus Terminal",
+        "lat": 12.914652444844307, 
+        "lon": 77.48769326704902,
+        "line": "Purple",
+        "connections": [
+            "pattanagere",
+            "kengeri"
+        ]
+    },
+    {
+        "id": "kengeri",
+        "name": "Kengeri",
+        "lat": 12.907933398810089, 
+        "lon": 77.47597586704896,
+        "line": "Purple",
+        "connections": [
+            "kengeri_bus",
+            "challaghatta"
+        ]
+    },
+    {
+        "id": "challaghatta",
+        "name": "Challaghatta",
+        "lat": 12.897347312930583, 
+        "lon": 77.46124079588519,
+        "line": "Purple",
+        "connections": [
+            "kengeri"
+        ]
+    }
 ]
