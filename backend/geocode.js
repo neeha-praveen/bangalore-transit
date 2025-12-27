@@ -25,3 +25,9 @@ async function geocodeAddress(address) {
 }
 
 module.exports = geocodeAddress;
+
+// Example usage:
+// (async () => {
+//   const coords = await geocodeAddress("MG Road, Bangalore, India");
+//   console.log(coords); // { lat: xx.xxxxx, lon: yy.yyyyy }
+// })();
