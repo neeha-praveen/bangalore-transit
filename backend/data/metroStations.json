@@ -241,14 +241,16 @@
         ]
     },
     {
-        "id": "magestic",
+        "id": "majestic",
         "name": "Kempegowda Station, Majestic",
         "lat": 12.9756710449676, 
         "lon": 77.57285470086886,
         "line": "Interchange",
         "connections": [
             "central_college",
-            "ksr_city"
+            "ksr_city",
+            "chickpet",
+            "sampige_road"
         ]
     },
     {
@@ -402,6 +404,510 @@
         "line": "Purple",
         "connections": [
             "kengeri"
+        ]
+    },
+    {
+        "id": "silk_insitute",
+        "name": "Silk Institute",  
+        "lat": 12.861193127780181, 
+        "lon": 77.52971056704831,
+        "line": "Green",
+        "connections": [
+            "thalaghattapura"
+        ]
+    },
+    {
+        "id": "thalaghattapura",
+        "name": "Thalaghattapura",
+        "lat": 12.870988996198747, 
+        "lon": 77.53820956704844,
+        "line": "Green",
+        "connections": [
+            "silk_insitute",
+            "vajarahalli"
+        ]
+    },
+    {
+        "id": "vajarahalli",
+        "name": "Vajarahalli",
+        "lat": 12.884846935323349, 
+        "lon": 77.55278469588504,
+        "line": "Green",
+        "connections": [
+            "thalaghattapura",
+            "doddakallasandra"
+        ]
+    },
+    {
+        "id": "doddakallasandra",
+        "name": "Doddakallasandra",
+        "lat": 12.89599182179828, 
+        "lon": 77.5654102670487,
+        "line": "Green",
+        "connections": [
+            "vajarahalli",
+            "konankunte_cross"
+        ]
+    },
+    {
+        "id":"konankunte_cross",
+        "name":"Konankunte Cross",  
+        "lat": 12.888266805721317, 
+        "lon": 77.56212910389664,
+        "line": "Green",
+        "connections": [
+            "doddakallasandra",
+            "yellechenahalli"
+        ]
+    },
+    {
+        "id":"yellechenahalli",
+        "name":"Yellechenahalli",  
+        "lat": 12.896021480330857, 
+        "lon": 77.5701391143514,
+        "line": "Green",
+        "connections": [
+            "konankunte_cross",
+            "jayaprakash_nagar"
+        ]
+    },
+    {
+        "id":"jayaprakash_nagar",
+        "name":"Jayaprakash Nagar",  
+        "lat": 12.907503998720719, 
+        "lon": 77.57303953821254,
+        "line": "Green",
+        "connections": [
+            "yellechenahalli",
+            "banashankari"
+        ]
+    },
+    {
+        "id":"banashankari",
+        "name":"Banashankari",  
+        "lat": 12.915410772587752, 
+        "lon": 77.57367179588545,
+        "line": "Green",
+        "connections": [
+            "jayaprakash_nagar",
+            "rashtreeya_vidyalaya_road"
+        ]
+    },
+    {
+        "id":"rashtreeya_vidyalaya_road",
+        "name":"Rashtreeya Vidyalaya Road",  
+        "lat": 12.921545858795653, 
+        "lon": 77.58026109588545,
+        "line": "Interchange",
+        "connections": [
+            "banashankari",
+            "jayanagar",
+            "ragigudda"
+        ]
+    },
+    {
+        "id":"jayanagar",
+        "name":"Jayanagar",  
+        "lat": 12.929478116935046, 
+        "lon": 77.58011006704922,
+        "line": "Green",
+        "connections": [
+            "rashtreeya_vidyalaya_road",
+            "south_end_circle"
+        ]
+    },
+    {
+        "id":"south_end_circle",
+        "name":"South End Circle",  
+        "lat": 12.938299874484592, 
+        "lon": 77.58010698239484,
+        "line": "Green",
+        "connections": [
+            "jayanagar",
+            "lalbagh"
+        ]
+    },
+    {
+        "id":"lalbagh",
+        "name":"Lalbagh",  
+        "lat": 12.946266075145543, 
+        "lon": 77.58006109588575,
+        "line": "Green",
+        "connections": [
+            "south_end_circle",
+            "national_college"
+        ]
+    },
+    {
+        "id":"national_college",
+        "name":"National College",  
+        "lat": 12.950582119570708, 
+        "lon": 77.57375765355859,
+        "line": "Green",
+        "connections": [
+            "lalbagh",
+            "kr_market"
+        ]
+    },
+    {
+        "id":"kr_market",
+        "name":"Krishna Rajendra Market",
+        "lat": 12.9604564208053, 
+        "lon": 77.57450285355866, 
+        "line": "Green",  
+        "connections": [
+            "national_college",
+            "chickpet"
+        ]
+    },
+    {
+        "id":"chickpet",
+        "name":"Chickpet",  
+        "lat": 12.967514721688417, 
+        "lon": 77.57480322472244,
+        "line": "Green",
+        "connections": [
+            "kr_market",
+            "majestic"
+        ]
+    },
+    {
+        "id":"sampige_road",
+        "name":"Sampige Road",  
+        "lat": 12.990513824569282, 
+        "lon": 77.57081562472273,
+        "line": "Green",
+        "connections": [
+            "srirampura",
+            "majestic"
+        ]
+    },
+    {
+        "id":"srirampura",
+        "name":"Srirampura",  
+        "lat": 12.996536241332281, 
+        "lon": 77.56343139774111,
+        "line": "Green",
+        "connections": [
+            "sampige_road",
+            "kuvempu road"
+        ]
+    },
+    {
+        "id":"kuvempu road",
+        "name":"Kuvempu Road",  
+        "lat": 12.998450017724577, 
+        "lon": 77.55693646705011,
+        "line": "Green",
+        "connections": [
+            "srirampura",
+            "rajajinagar"
+        ]
+    },
+    {
+        "id":"rajajinagar",
+        "name":"Rajajinagar",  
+        "lat": 13.000314425798502, 
+        "lon": 77.54974829588639,
+        "line": "Green",
+        "connections": [
+            "kuvempu_road",
+            "mahalakshmi"
+        ]
+    },
+    {
+        "id":"mahalakshmi",
+        "name":"Mahalakshmi",  
+        "lat": 13.00831668030776, 
+        "lon": 77.54883419588664,
+        "line": "Green",
+        "connections": [
+            "rajajinagar",
+            "sandal_soap_factory"
+        ]
+    },
+    {
+        "id":"sandal_soap_factory",
+        "name":"Sandal Soap Factory",  
+        "lat": 13.014686774366744, 
+        "lon": 77.554041624723,
+        "line": "Green",
+        "connections": [
+            "mahalakshmi",
+            "yeshwanthpur"
+        ]
+    },
+    {
+        "id":"yeshwathpur",
+        "name":"Yeshwanthpur",  
+        "lat": 13.023277928682067, 
+        "lon": 77.54988505355948,
+        "line": "Green",
+        "connections": [
+            "sandal_soap_factory",
+            "goraguntepalya"
+        ]
+    },
+    {
+        "id":"goraguntepalya",
+        "name":"Yeshwanthpur",  
+        "lat": 13.028454629332893, 
+        "lon": 77.54091021123236,
+        "line": "Green",
+        "connections": [
+            "yeshwanthpur",
+            "peenya"
+        ]
+    },
+    {
+        "id":"peenya",
+        "name":"Peenya",  
+        "lat": 13.032965982365148, 
+        "lon": 77.53349055355964,
+        "line": "Green",
+        "connections": [
+            "goraguntepalya",
+            "peenya_industry"
+        ]
+    },
+    {
+        "id":"peenya_industry",
+        "name":"Peenya Industry",  
+        "lat": 13.03642698265441, 
+        "lon": 77.52549451123254,
+        "line": "Green",
+        "connections": [
+            "jalahalli",
+            "peenya"
+        ]
+    },
+    {
+        "id":"jalahalli",
+        "name":"Jalahalli",  
+        "lat": 13.039462178527321, 
+        "lon": 77.51998372472329,
+        "line": "Green",
+        "connections": [
+            "peenya_industry",
+            "dasarahalli"
+        ]
+    },
+    {
+        "id":"dasarahalli",
+        "name":"Dasarahalli",  
+        "lat": 13.04354188728701, 
+        "lon": 77.51236836705054,
+        "line": "Green",
+        "connections": [
+            "nagasandra",
+            "dasarahalli"
+        ]
+    },
+    {
+        "id":"nagasandra",
+        "name":"Nagasandra",  
+        "lat": 13.048081931802587, 
+        "lon": 77.50009090937787,
+        "line": "Green",
+        "connections": [
+            "nagasandra",
+            "manjunathanagar"
+        ]
+    },
+    {
+        "id":"manjunathanagar",
+        "name":"Manjunathanagar",  
+        "lat": 13.05011873204336, 
+        "lon": 77.49440695348761,
+        "line": "Green",
+        "connections": [
+            "nagasandra",
+            "chikkabidarakallu"
+        ]
+    },
+    {
+        "id":"chikkabidarakallu",
+        "name":"Chikkabidarakallu",  
+        "lat": 13.052291583981063, 
+        "lon": 77.48820408239631,
+        "line": "Green",
+        "connections": [
+            "madavara",
+            "manjunathanagar"
+        ]
+    },
+    {
+        "id":"madavara",
+        "name":"Madavara",  
+        "lat": 13.057319878661831, 
+        "lon": 77.47295969588713,
+        "line": "Green",
+        "connections": [
+            "chikkabidarakallu"
+        ]
+    },
+    {
+        "id":"ragigudda",
+        "name":"Ragigudda",  
+        "lat": 12.916955094578647, 
+        "lon": 77.5881682242188,
+        "line": "Yellow",
+        "connections": [
+            "rashtreeya_vidyalaya_road",
+            "jayadeva_hospital"
+        ]
+    },
+    {
+        "id":"jayadeva_hospital",
+        "name":"Jayadeva Hospital",  
+        "lat": 12.916722846512402, 
+        "lon": 77.60008897526072,
+        "line": "Interchange",
+        "connections": [
+            "ragigudda",
+            "btm_layout"
+        ]
+    },
+    {
+        "id":"btm_layout",
+        "name":"BTM Layout",  
+        "lat": 12.916456615311018, 
+        "lon": 77.60805026704908,
+        "line": "Yellow",
+        "connections": [
+            "jayadeva_hospital",
+            "central_silk_board"
+        ]
+    },
+    {
+        "id":"central_silk_board",
+        "name":"Central Silk Board",  
+        "lat": 12.91639387111091, 
+        "lon": 77.62054936106136,
+        "line": "Interchange",
+        "connections": [
+            "btm_layout",
+            "bommanahalli"
+        ]
+    },
+    {
+        "id":"bommanahalli",
+        "name":"Bommanahalli",  
+        "lat": 12.910700214593557, 
+        "lon": 77.62633862472171,
+        "line": "Yellow",
+        "connections": [
+            "central_silk_board",
+            "hongasandra"
+        ]
+    },
+    {
+        "id":"hongasandra",
+        "name":"Hongasandra",  
+        "lat": 12.90166985548721, 
+        "lon": 77.6319659382124,
+        "line": "Yellow",
+        "connections": [
+            "bommanahalli",
+            "kudlu_gate"
+        ]
+    },
+    {
+        "id":"kudlu_gate",
+        "name":"Kudlu Gate",  
+        "lat": 12.889989212014854, 
+        "lon": 77.63916043821227,
+        "line": "Yellow",
+        "connections": [
+            "hongasandra",
+            "singasandra"
+        ]
+    },
+    {
+        "id":"singasandra",
+        "name":"Singasandra",  
+        "lat": 12.880627033721462, 
+        "lon": 77.64483445541244,
+        "line": "Yellow",
+        "connections": [
+            "kudlu_gate",
+            "hosa_road"
+        ]
+    },
+    {
+        "id":"hosa_road",
+        "name":"Hosa Road",  
+        "lat": 12.87012740954581, 
+        "lon": 77.65273343821202,
+        "line": "Yellow",
+        "connections": [
+            "singasandra",
+            "beratena_agrahara"
+        ]
+    },
+    {
+        "id":"beratena_agrahara",
+        "name":"Beratena Agrahara",  
+        "lat": 12.863634149170018, 
+        "lon": 77.65788626704835,
+        "line": "Yellow",
+        "connections": [
+            "hosa_road",
+            "electronic_city"
+        ]
+    },
+    {
+        "id":"electronic_city",
+        "name":"Electronic City",  
+        "lat": 12.85638152573334, 
+        "lon": 77.66342574428732,
+        "line": "Yellow",
+        "connections": [
+            "beratena_agrahara",
+            "konnapana_agrahara"
+        ]
+    },
+    {
+        "id":"konnapana_agrahara",
+        "name":"Konnapana Agrahara",  
+        "lat": 12.846218207690127, 
+        "lon": 77.6711356334942,
+        "line": "Yellow",
+        "connections": [
+            "electronic_city",
+            "huskur_road"
+        ]
+    },
+    {
+        "id":"huskur_road",
+        "name":"Huskur Road",  
+        "lat": 12.838885432660632, 
+        "lon": 77.67744418907328,
+        "line": "Yellow",
+        "connections": [
+            "konnapana_agrahara",
+            "hebbagodi"
+        ]
+    },
+    {
+        "id":"hebbagodi",
+        "name":"Hebbagodi",  
+        "lat": 12.82894775751748, 
+        "lon": 77.68140580121417,
+        "line": "Yellow",
+        "connections": [
+            "huskur_road",
+            "bommasandra"
+        ]
+    },
+    {
+        "id":"bommasandra",
+        "name":"Bommasandra",  
+        "lat": 12.81930009527172, 
+        "lon": 77.68833996005503,
+        "line": "Yellow",
+        "connections": [
+            "hebbagodi"
         ]
     }
 ]
