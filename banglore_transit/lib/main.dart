@@ -194,33 +194,48 @@ class _HomeScreenState extends State<HomeScreen> {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () async {
-                  final response = await http.post(
-                    Uri.parse("http://10.0.2.2:4000/route"),
-                    headers: {"Content-Type": "application/json"},
-                    body: jsonEncode({
-                      "from": fromController.text,
-                      "to": toController.text,
-                    }),
-                  );
+                  try {
+                    final response = await http.post(
+                      Uri.parse("http://10.0.2.2:4000/route"),
+                      headers: {"Content-Type": "application/json"},
+                      body: jsonEncode({
+                        "from": fromController.text,
+                        "to": toController.text,
+                      }),
+                    );
 
-                  final data = jsonDecode(response.body);
-                  final route = List<Map<String, dynamic>>.from(
-                    data["metroRoute"],
-                  );
+                    if (response.statusCode != 200) {
+                      debugPrint("Server error: ${response.body}");
+                      return;
+                    }
 
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => ResultScreen(
-                        steps: List<String>.from(data["directions"]),
-                        startLat: (data["from"]["lat"] as num).toDouble(),
-                        startLon: (data["from"]["lon"] as num).toDouble(),
-                        endLat: (data["to"]["lat"] as num).toDouble(),
-                        endLon: (data["to"]["lon"] as num).toDouble(),
-                        metroRoute: route,
+                    final data = jsonDecode(response.body);
+
+                    final directions =
+                        (data["directions"] as List?)?.cast<String>() ?? [];
+
+                    final route =
+                        (data["metroRoute"] as List?)
+                            ?.cast<Map<String, dynamic>>() ??
+                        [];
+
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => ResultScreen(
+                          steps: directions,
+                          startLat: (data["from"]["lat"] as num).toDouble(),
+                          startLon: (data["from"]["lon"] as num).toDouble(),
+                          endLat: (data["to"]["lat"] as num).toDouble(),
+                          endLon: (data["to"]["lon"] as num).toDouble(),
+                          metroRoute: route,
+                        ),
                       ),
-                    ),
-                  );
+                    );
+                  } catch (e, stack) {
+                    debugPrint("ERROR: $e");
+                    debugPrintStack(stackTrace: stack);
+                  }
                 },
 
                 child: const Text("Find Route"),

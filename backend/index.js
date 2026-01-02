@@ -8,6 +8,8 @@ const findMetroRoute = require("./utils/metroRouting");
 
 const app = express();
 
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+
 app.use(cors());
 app.use(express.json());
 
@@ -43,6 +45,7 @@ app.post("/route", async (req, res) => {
 
   try {
     const fromCoords = await geocodeAddress(from);
+    await sleep(1000); // To respect Nominatim usage policy
     const toCoords = await geocodeAddress(to);
 
     if (!fromCoords || !toCoords) {

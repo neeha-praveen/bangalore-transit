@@ -10,11 +10,12 @@ async function geocodeAddress(address) {
       limit: 1,
     },
     headers: {
-      "User-Agent": "BangaloreTransitApp/1.0",
+      // REQUIRED by Nominatim policy
+      "User-Agent": "BangaloreTransitApp/1.0 (contact: neeha.npraveen@gmail.com)",
     },
   });
 
-  if (response.data.length === 0) {
+  if (!response.data || response.data.length === 0) {
     return null;
   }
 
@@ -25,9 +26,3 @@ async function geocodeAddress(address) {
 }
 
 module.exports = geocodeAddress;
-
-// Example usage:
-// (async () => {
-//   const coords = await geocodeAddress("MG Road, Bangalore, India");
-//   console.log(coords); // { lat: xx.xxxxx, lon: yy.yyyyy }
-// })();
