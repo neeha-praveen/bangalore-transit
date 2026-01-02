@@ -55,47 +55,62 @@ app.post("/route", async (req, res) => {
       });
     }
 
-    function findNearestStation(coords) {
-      let nearest = null;
-      let minDistance = Infinity;
-
-      for (const station of metroStations) {
-        const dist = haversineDistance(
-          coords.lat,
-          coords.lon,
-          station.lat,
-          station.lon
-        );
-
-        if (dist < minDistance) {
-          minDistance = dist;
-          nearest = station;
-        }
-      }
-
-      return { station: nearest, distanceKm: minDistance };
+    function findNearestStations(coords, K = 5) {
+      return metroStations
+        .map((station) => ({
+          station,
+          distanceKm: haversineDistance(
+            coords.lat,
+            coords.lon,
+            station.lat,
+            station.lon
+          ),
+        }))
+        .sort((a, b) => a.distanceKm - b.distanceKm)
+        .slice(0, K);
     }
 
-    const fromNearest = findNearestStation(fromCoords);
-    const toNearest = findNearestStation(toCoords);
+    const fromCandidates = findNearestStations(fromCoords, 5);
+    const toCandidates = findNearestStations(toCoords, 5);
 
-    const startStationId = fromNearest.station.id;
-    const endStationId = toNearest.station.id;
+    let bestRoute = null;
+    let bestScore = Infinity;
+    let bestFrom = null;
+    let bestTo = null;
 
-    const stationPathIds = findMetroRoute(
-      metroStations,
-      startStationId,
-      endStationId
-    );
+    for (const fromC of fromCandidates) {
+      for (const toC of toCandidates) {
+        const pathIds = findMetroRoute(
+          metroStations,
+          fromC.station.id,
+          toC.station.id
+        );
 
-    if (!stationPathIds) {
+        if (!pathIds) continue;
+
+        // Simple scoring function (can improve later)
+        const score =
+          fromC.distanceKm * 1.5 +   // walking penalty
+          toC.distanceKm * 1.5 +
+          pathIds.length;            // metro hops
+
+        if (score < bestScore) {
+          bestScore = score;
+          bestRoute = pathIds;
+          bestFrom = fromC;
+          bestTo = toC;
+        }
+      }
+    }
+
+    if (!bestRoute) {
       return res.status(404).json({
         success: false,
         message: "No metro route found",
       });
     }
 
-    const stationPath = stationPathIds.map((id) =>
+    const stationPath = bestRoute.map((id) =>
       metroStations.find((s) => s.id === id)
     );
 
@@ -104,15 +119,15 @@ app.post("/route", async (req, res) => {
     res.json({
       success: true,
       from: {
-        lat: fromNearest.station.lat,
-        lon: fromNearest.station.lon
+        lat: bestFrom.station.lat,
+        lon: bestFrom.station.lon
       },
       to: {
-        lat: toNearest.station.lat,
-        lon: toNearest.station.lon
+        lat: bestTo.station.lat,
+        lon: bestTo.station.lon
       },
-      startStation: fromNearest.station.name,
-      endStation: toNearest.station.name,
+      startStation: bestFrom.station.name,
+      endStation: bestTo.station.name,
       metroRoute: stationPath.map((s) => ({
         name: s.name,
         lat: s.lat,
