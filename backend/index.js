@@ -18,41 +18,60 @@ app.get("/", (req, res) => {
 });
 
 function buildSteps(stationPath) {
+  if (stationPath.length === 1) {
+    return [
+      { type: "walk", to: stationPath[0].name },
+      { type: "exit", at: stationPath[0].name }
+    ];
+  }
+
   const steps = [];
 
-  // Walk step
+  // Walk to first station
   steps.push({
     type: "walk",
     to: stationPath[0].name,
   });
 
-  let currentLine = stationPath[0].line;
+  // helper: find common line between two stations
+  function sharedLine(a, b) {
+    if (!a?.lines || !b?.lines) return null;
+    return a.lines.find(l => b.lines.includes(l));
+  }
+
+  // determine starting line (look ahead)
+  let currentLine = sharedLine(stationPath[0], stationPath[1]);
   let segmentStart = stationPath[0].name;
 
   for (let i = 1; i < stationPath.length; i++) {
+    const prev = stationPath[i - 1];
     const curr = stationPath[i];
 
-    if (curr.line !== currentLine) {
-      // Finish previous metro segment
+    const nextLine = sharedLine(prev, curr);
+
+    // 🚨 REAL interchange: no shared line
+    if (!nextLine || nextLine !== currentLine) {
+      // finish previous metro segment
       steps.push({
         type: "metro",
         line: currentLine,
         from: segmentStart,
-        to: stationPath[i - 1].name,
+        to: prev.name,
       });
 
-      // Transfer
+      // add transfer
       steps.push({
         type: "transfer",
-        at: stationPath[i - 1].name,
+        at: prev.name,
       });
 
-      currentLine = curr.line;
+      // start new segment
+      currentLine = nextLine;
       segmentStart = curr.name;
     }
   }
 
-  // Final metro segment
+  // final metro segment
   steps.push({
     type: "metro",
     line: currentLine,
@@ -60,7 +79,7 @@ function buildSteps(stationPath) {
     to: stationPath[stationPath.length - 1].name,
   });
 
-  // Exit
+  // exit
   steps.push({
     type: "exit",
     at: stationPath[stationPath.length - 1].name,
@@ -68,6 +87,30 @@ function buildSteps(stationPath) {
 
   return steps;
 }
+
+function countLineChanges(stationPath) {
+  if (stationPath.length < 2) return 0;
+
+  let changes = 0;
+
+  function sharedLine(a, b) {
+    if (!a?.lines || !b?.lines) return null;
+    return a.lines.find(l => b.lines.includes(l));
+  }
+
+  let currentLine = sharedLine(stationPath[0], stationPath[1]);
+
+  for (let i = 1; i < stationPath.length; i++) {
+    const nextLine = sharedLine(stationPath[i - 1], stationPath[i]);
+    if (nextLine && nextLine !== currentLine) {
+      changes++;
+      currentLine = nextLine;
+    }
+  }
+
+  return changes;
+}
+
 
 app.post("/route", async (req, res) => {
   const { from, to } = req.body;
@@ -117,11 +160,19 @@ app.post("/route", async (req, res) => {
 
         if (!pathIds) continue;
 
+        const stationPath = pathIds.map(id =>
+          metroStations.find(s => s.id === id)
+        );
+
+        const lineChanges = countLineChanges(stationPath);
+
+
         // Simple scoring function (can improve later)
         const score =
           fromC.distanceKm * 1.5 +   // walking penalty
           toC.distanceKm * 1.5 +
-          pathIds.length;            // metro hops
+          pathIds.length +
+          lineChanges * 10;           // metro hops
 
         if (score < bestScore) {
           bestScore = score;
@@ -143,6 +194,16 @@ app.post("/route", async (req, res) => {
       metroStations.find((s) => s.id === id)
     );
 
+    // 🔴 DEBUG: log the raw path
+    console.log(
+      "STATION PATH:",
+      stationPath.map(s => ({
+        id: s.id,
+        name: s.name,
+        lines: s.lines
+      }))
+    );
+
     const steps = buildSteps(stationPath);
 
     res.json({
@@ -161,7 +222,7 @@ app.post("/route", async (req, res) => {
         name: s.name,
         lat: s.lat,
         lon: s.lon,
-        line: s.line,
+        line: s.lines,
       })),
 
       steps,

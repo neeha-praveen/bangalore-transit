@@ -4,7 +4,7 @@
         "name": "Baiyappanahalli",
         "lat": 12.991898254552773,
         "lon": 77.65287394563238,
-        "line": "Purple",
+        "lines": ["Purple"],
         "connections": [
             "benniganahalli",
             "swami_vivekananda_road"
@@ -15,7 +15,7 @@
         "name": "Whitefield (Kadugodi)",
         "lat": 12.995487735920735, 
         "lon": 77.75856101443354,
-        "line": "Purple",
+        "lines": ["Purple"],
         "connections": [
             "channasandra_hopefarm"
         ]
@@ -25,7 +25,7 @@
         "name": "Channasandra (Hopefarm)",
         "lat": 12.987306594457198, 
         "lon": 77.75450949908782,
-        "line": "Purple",
+        "lines": ["Purple"],
         "connections": [
             "whitefield_kadugodi",
             "kadugodi_tree_park"
@@ -36,7 +36,7 @@
         "name": "Kadugodi Tree Park",
         "lat": 12.986136336544561, 
         "lon": 77.74708246076865,
-        "line": "Purple",
+        "lines": ["Purple"],
         "connections": [
             "channasandra_hopefarm",
             "pattandur_agrahara"
@@ -47,7 +47,7 @@
         "name": "Pattandur Agrahara",
         "lat": 12.987810166063946, 
         "lon": 77.73770480937712,
-        "line": "Purple",
+        "lines": ["Purple"],
         "connections": [
             "kadugodi_tree_park",
             "srisatyasai_hospital"
@@ -58,7 +58,7 @@
         "name": "Sri Sathya Sai Hospital",
         "lat": 12.98116226518972, 
         "lon": 77.72759321436031,
-        "line": "Purple",
+        "lines": ["Purple"],
         "connections": [
             "pattandur_agrahara",
             "nallurhalli"
@@ -69,7 +69,7 @@
         "name": "Nallurhalli",
         "lat": 12.976851538889647, 
         "lon": 77.72475199588612,
-        "line": "Purple",
+        "lines": ["Purple"],
         "connections": [
             "srisatyasai_hospital",
             "kundalahalli"
@@ -80,7 +80,7 @@
         "name": "Kundalahalli",
         "lat": 12.977870795769432, 
         "lon": 77.71557852970554, 
-        "line": "Purple",
+        "lines": ["Purple"],
         "connections": [
             "nallurhalli",
             "seetharampalya"
@@ -91,7 +91,7 @@
         "name": "Seetharam Palya",
         "lat": 12.980958743271398, 
         "lon": 77.7088784112317,
-        "line": "Purple",
+        "lines": ["Purple"],
         "connections": [
             "kundalahalli",
             "hoodi"
@@ -102,7 +102,7 @@
         "name": "Hoodi",
         "lat": 12.988938802219518, 
         "lon": 77.71139618239542,
-        "line": "Purple",
+        "lines": ["Purple"],
         "connections": [
             "seetharampalya",
             "garudacharpalya"
@@ -113,7 +113,7 @@
         "name": "Garudacharpalya",
         "lat": 12.993674661615184, 
         "lon": 77.70367573821356,
-        "line": "Purple",
+        "lines": ["Purple"],
         "connections": [
             "hoodi",
             "singayyanapalya"
@@ -124,7 +124,7 @@
         "name": "Singayyanapalya",
         "lat": 12.996717350894556, 
         "lon": 77.69235894748901,
-        "line": "Purple",
+        "lines": ["Purple"],
         "connections": [
             "garudacharpalya",
             "kr_pura"
@@ -135,7 +135,7 @@
         "name": "KR Puram",
         "lat": 13.000065925885721, 
         "lon": 77.67764915355912,
-        "line": "Purple",
+        "lines": ["Purple"],
         "connections": [
             "singayyanapalya",
             "benniganahalli"
@@ -146,7 +146,7 @@
         "name": "Benniganahalli",
         "lat": 12.996655945418082, 
         "lon": 77.66823060937723,
-        "line": "Purple",
+        "lines": ["Purple"],
         "connections": [
             "kr_pura",
             "baiyappanahalli"
@@ -157,7 +157,7 @@
         "name": "Swami Vivekananda Road",
         "lat": 12.985960468610926, 
         "lon": 77.64513020948337,
-        "line": "Purple",
+        "lines": ["Purple"],
         "connections": [
             "baiyappanahalli",
             "indiranagar"
@@ -168,7 +168,7 @@
         "name": "Indiranagar",
         "lat": 12.978251432574671, 
         "lon": 77.63851496704979,
-        "line": "Purple",
+        "lines": ["Purple"],
         "connections": [
             "swami_vivekananda_road",
             "halasuru"
@@ -179,7 +179,7 @@
         "name": "Halasuru",
         "lat": 12.976398003410191, 
         "lon": 77.62667201890453,
-        "line": "Purple",
+        "lines": ["Purple"],
         "connections": [
             "indiranagar",
             "trinity"
@@ -190,7 +190,7 @@
         "name": "Trinity",
         "lat": 12.973331532372258, 
         "lon": 77.61571899588613,
-        "line": "Purple",
+        "lines": ["Purple"],
         "connections": [
             "mg_road",
             "halasuru"
@@ -201,7 +201,7 @@
         "name": "Mahatma Gandhi Road",
         "lat": 12.97300028735108, 
         "lon": 77.61676736704966,
-        "line": "Purple",
+        "lines": ["Purple"],
         "connections": [
             "trinity",
             "cubbon_park"
@@ -212,7 +212,7 @@
         "name": "Cubbon Park",
         "lat": 12.980911242004089, 
         "lon": 77.59746539588619,
-        "line": "Purple",
+        "lines": ["Purple"],
         "connections": [
             "mg_road",
             "vidhana_soudha"
@@ -223,7 +223,7 @@
         "name": "Vidhana Soudha",
         "lat": 12.979702942056047, 
         "lon": 77.5926342958862,
-        "line": "Purple",
+        "lines": ["Purple"],
         "connections": [
             "cubbon_park",
             "central_college"
@@ -234,10 +234,10 @@
         "name": "Central College",
         "lat": 12.974270032410853, 
         "lon": 77.58392433821328,
-        "line": "Purple",
+        "lines": ["Purple"],
         "connections": [
             "vidhana_soudha",
-            "magestic"
+            "majestic"
         ]
     },
     {
@@ -245,7 +245,7 @@
         "name": "Kempegowda Station, Majestic",
         "lat": 12.9756710449676, 
         "lon": 77.57285470086886,
-        "line": "Interchange",
+        "lines": ["Purple", "Green"],
         "connections": [
             "central_college",
             "ksr_city",
@@ -258,9 +258,9 @@
         "name": "KSR City Railway Station",
         "lat": 12.975829832475025, 
         "lon": 77.56575609588617,
-        "line": "Purple",
+        "lines": ["Purple"],
         "connections": [
-            "magestic",
+            "majestic",
             "magadi_road"
         ]
     },
@@ -269,7 +269,7 @@
         "name": "Magadi Road",
         "lat": 12.975626822704005, 
         "lon": 77.55540076704972,
-        "line": "Purple",
+        "lines": ["Purple"],
         "connections": [
             "ksr_city",
             "hosahalli"
@@ -280,7 +280,7 @@
         "name": "Hosahalli",
         "lat": 12.974302077474887, 
         "lon": 77.54508496704973,
-        "line": "Purple",
+        "lines": ["Purple"],
         "connections": [
             "magadi_road",
             "vijayanagar"
@@ -291,7 +291,7 @@
         "name": "Vijayanagar",
         "lat": 12.970788322098278, 
         "lon": 77.5373530670497,
-        "line": "Purple",
+        "lines": ["Purple"],
         "connections": [
             "hosahalli",
             "attiguppe"
@@ -302,7 +302,7 @@
         "name": "Attiguppe",
         "lat": 12.96205930827892, 
         "lon":77.5337045284318,
-        "line": "Purple",
+        "lines": ["Purple"],
         "connections": [
             "vijayanagar",
             "deepanjali_nagar"
@@ -313,7 +313,7 @@
         "name": "Deepanjali Nagar",
         "lat": 12.952294990582072, 
         "lon": 77.53695628666254,
-        "line": "Purple",
+        "lines": ["Purple"],
         "connections": [
             "attiguppe",
             "mysuru_road"
@@ -324,7 +324,7 @@
         "name": "Mysuru Road",
         "lat": 12.946695419084978, 
         "lon": 77.53007389588575,
-        "line": "Purple",
+        "lines": ["Purple"],
         "connections": [
             "deepanjali_nagar",
             "nayandahalli"
@@ -335,7 +335,7 @@
         "name": "Nayandahalli",
         "lat": 12.946198082194732, 
         "lon": 77.52982526561338,
-        "line": "Purple",
+        "lines": ["Purple"],
         "connections": [
             "mysuru_road",
             "rajarajeshwari_nagar"
@@ -346,7 +346,7 @@
         "name": "Rajarajeshwari Nagar",
         "lat": 12.936661617831742, 
         "lon": 77.51955599588568,
-        "line": "Purple",
+        "lines": ["Purple"],
         "connections": [
             "nayandahalli",
             "jnanabharathi"
@@ -357,7 +357,7 @@
         "name": "Jnanabharathi",
         "lat": 12.935315417663707, 
         "lon": 77.51202943821282,
-        "line": "Purple",
+        "lines": ["Purple"],
         "connections": [
             "rajarajeshwari_nagar",
             "pattanagere"
@@ -368,7 +368,7 @@
         "name": "Pattanagere",
         "lat": 12.924227816280027, 
         "lon": 77.49846709588553,
-        "line": "Purple",
+        "lines": ["Purple"],
         "connections": [
             "jnanabharathi",
             "kengeri_bus"
@@ -379,7 +379,7 @@
         "name": "Kengeri Bus Terminal",
         "lat": 12.914652444844307, 
         "lon": 77.48769326704902,
-        "line": "Purple",
+        "lines": ["Purple"],
         "connections": [
             "pattanagere",
             "kengeri"
@@ -390,7 +390,7 @@
         "name": "Kengeri",
         "lat": 12.907933398810089, 
         "lon": 77.47597586704896,
-        "line": "Purple",
+        "lines": ["Purple"],
         "connections": [
             "kengeri_bus",
             "challaghatta"
@@ -401,17 +401,17 @@
         "name": "Challaghatta",
         "lat": 12.897347312930583, 
         "lon": 77.46124079588519,
-        "line": "Purple",
+        "lines": ["Purple"],
         "connections": [
             "kengeri"
         ]
     },
     {
-        "id": "silk_insitute",
+        "id": "silk_institute",
         "name": "Silk Institute",  
         "lat": 12.861193127780181, 
         "lon": 77.52971056704831,
-        "line": "Green",
+        "lines": ["Green"],
         "connections": [
             "thalaghattapura"
         ]
@@ -421,7 +421,7 @@
         "name": "Thalaghattapura",
         "lat": 12.870988996198747, 
         "lon": 77.53820956704844,
-        "line": "Green",
+        "lines": ["Green"],
         "connections": [
             "silk_insitute",
             "vajarahalli"
@@ -432,7 +432,7 @@
         "name": "Vajarahalli",
         "lat": 12.884846935323349, 
         "lon": 77.55278469588504,
-        "line": "Green",
+        "lines": ["Green"],
         "connections": [
             "thalaghattapura",
             "doddakallasandra"
@@ -443,7 +443,7 @@
         "name": "Doddakallasandra",
         "lat": 12.89599182179828, 
         "lon": 77.5654102670487,
-        "line": "Green",
+        "lines": ["Green"],
         "connections": [
             "vajarahalli",
             "konankunte_cross"
@@ -454,7 +454,7 @@
         "name":"Konankunte Cross",  
         "lat": 12.888266805721317, 
         "lon": 77.56212910389664,
-        "line": "Green",
+        "lines": ["Green"],
         "connections": [
             "doddakallasandra",
             "yellechenahalli"
@@ -465,7 +465,7 @@
         "name":"Yellechenahalli",  
         "lat": 12.896021480330857, 
         "lon": 77.5701391143514,
-        "line": "Green",
+        "lines": ["Green"],
         "connections": [
             "konankunte_cross",
             "jayaprakash_nagar"
@@ -476,7 +476,7 @@
         "name":"Jayaprakash Nagar",  
         "lat": 12.907503998720719, 
         "lon": 77.57303953821254,
-        "line": "Green",
+        "lines": ["Green"],
         "connections": [
             "yellechenahalli",
             "banashankari"
@@ -487,7 +487,7 @@
         "name":"Banashankari",  
         "lat": 12.915410772587752, 
         "lon": 77.57367179588545,
-        "line": "Green",
+        "lines": ["Green"],
         "connections": [
             "jayaprakash_nagar",
             "rashtreeya_vidyalaya_road"
@@ -498,7 +498,7 @@
         "name":"Rashtreeya Vidyalaya Road",  
         "lat": 12.921545858795653, 
         "lon": 77.58026109588545,
-        "line": "Interchange",
+        "lines": ["Green", "Yellow"],
         "connections": [
             "banashankari",
             "jayanagar",
@@ -510,7 +510,7 @@
         "name":"Jayanagar",  
         "lat": 12.929478116935046, 
         "lon": 77.58011006704922,
-        "line": "Green",
+        "lines": ["Green"],
         "connections": [
             "rashtreeya_vidyalaya_road",
             "south_end_circle"
@@ -521,7 +521,7 @@
         "name":"South End Circle",  
         "lat": 12.938299874484592, 
         "lon": 77.58010698239484,
-        "line": "Green",
+        "lines": ["Green"],
         "connections": [
             "jayanagar",
             "lalbagh"
@@ -532,7 +532,7 @@
         "name":"Lalbagh",  
         "lat": 12.946266075145543, 
         "lon": 77.58006109588575,
-        "line": "Green",
+        "lines": ["Green"],
         "connections": [
             "south_end_circle",
             "national_college"
@@ -543,7 +543,7 @@
         "name":"National College",  
         "lat": 12.950582119570708, 
         "lon": 77.57375765355859,
-        "line": "Green",
+        "lines": ["Green"],
         "connections": [
             "lalbagh",
             "kr_market"
@@ -554,7 +554,7 @@
         "name":"Krishna Rajendra Market",
         "lat": 12.9604564208053, 
         "lon": 77.57450285355866, 
-        "line": "Green",  
+        "lines": ["Green"],  
         "connections": [
             "national_college",
             "chickpet"
@@ -565,7 +565,7 @@
         "name":"Chickpet",  
         "lat": 12.967514721688417, 
         "lon": 77.57480322472244,
-        "line": "Green",
+        "lines": ["Green"],
         "connections": [
             "kr_market",
             "majestic"
@@ -576,7 +576,7 @@
         "name":"Sampige Road",  
         "lat": 12.990513824569282, 
         "lon": 77.57081562472273,
-        "line": "Green",
+        "lines": ["Green"],
         "connections": [
             "srirampura",
             "majestic"
@@ -587,18 +587,18 @@
         "name":"Srirampura",  
         "lat": 12.996536241332281, 
         "lon": 77.56343139774111,
-        "line": "Green",
+        "lines": ["Green"],
         "connections": [
             "sampige_road",
-            "kuvempu road"
+            "kuvempu_road"
         ]
     },
     {
-        "id":"kuvempu road",
+        "id":"kuvempu_road",
         "name":"Kuvempu Road",  
         "lat": 12.998450017724577, 
         "lon": 77.55693646705011,
-        "line": "Green",
+        "lines": ["Green"],
         "connections": [
             "srirampura",
             "rajajinagar"
@@ -609,7 +609,7 @@
         "name":"Rajajinagar",  
         "lat": 13.000314425798502, 
         "lon": 77.54974829588639,
-        "line": "Green",
+        "lines": ["Green"],
         "connections": [
             "kuvempu_road",
             "mahalakshmi"
@@ -620,7 +620,7 @@
         "name":"Mahalakshmi",  
         "lat": 13.00831668030776, 
         "lon": 77.54883419588664,
-        "line": "Green",
+        "lines": ["Green"],
         "connections": [
             "rajajinagar",
             "sandal_soap_factory"
@@ -631,18 +631,18 @@
         "name":"Sandal Soap Factory",  
         "lat": 13.014686774366744, 
         "lon": 77.554041624723,
-        "line": "Green",
+        "lines": ["Green"],
         "connections": [
             "mahalakshmi",
             "yeshwanthpur"
         ]
     },
     {
-        "id":"yeshwathpur",
+        "id":"yeshwanthpur",
         "name":"Yeshwanthpur",  
         "lat": 13.023277928682067, 
         "lon": 77.54988505355948,
-        "line": "Green",
+        "lines": ["Green"],
         "connections": [
             "sandal_soap_factory",
             "goraguntepalya"
@@ -650,10 +650,10 @@
     },
     {
         "id":"goraguntepalya",
-        "name":"Yeshwanthpur",  
+        "name":"Goraguntepalya",  
         "lat": 13.028454629332893, 
         "lon": 77.54091021123236,
-        "line": "Green",
+        "lines": ["Green"],
         "connections": [
             "yeshwanthpur",
             "peenya"
@@ -664,7 +664,7 @@
         "name":"Peenya",  
         "lat": 13.032965982365148, 
         "lon": 77.53349055355964,
-        "line": "Green",
+        "lines": ["Green"],
         "connections": [
             "goraguntepalya",
             "peenya_industry"
@@ -675,7 +675,7 @@
         "name":"Peenya Industry",  
         "lat": 13.03642698265441, 
         "lon": 77.52549451123254,
-        "line": "Green",
+        "lines": ["Green"],
         "connections": [
             "jalahalli",
             "peenya"
@@ -686,7 +686,7 @@
         "name":"Jalahalli",  
         "lat": 13.039462178527321, 
         "lon": 77.51998372472329,
-        "line": "Green",
+        "lines": ["Green"],
         "connections": [
             "peenya_industry",
             "dasarahalli"
@@ -697,7 +697,7 @@
         "name":"Dasarahalli",  
         "lat": 13.04354188728701, 
         "lon": 77.51236836705054,
-        "line": "Green",
+        "lines": ["Green"],
         "connections": [
             "nagasandra",
             "dasarahalli"
@@ -708,9 +708,9 @@
         "name":"Nagasandra",  
         "lat": 13.048081931802587, 
         "lon": 77.50009090937787,
-        "line": "Green",
+        "lines": ["Green"],
         "connections": [
-            "nagasandra",
+            "dasarahalli",
             "manjunathanagar"
         ]
     },
@@ -719,7 +719,7 @@
         "name":"Manjunathanagar",  
         "lat": 13.05011873204336, 
         "lon": 77.49440695348761,
-        "line": "Green",
+        "lines": ["Green"],
         "connections": [
             "nagasandra",
             "chikkabidarakallu"
@@ -730,7 +730,7 @@
         "name":"Chikkabidarakallu",  
         "lat": 13.052291583981063, 
         "lon": 77.48820408239631,
-        "line": "Green",
+        "lines": ["Green"],
         "connections": [
             "madavara",
             "manjunathanagar"
@@ -741,7 +741,7 @@
         "name":"Madavara",  
         "lat": 13.057319878661831, 
         "lon": 77.47295969588713,
-        "line": "Green",
+        "lines": ["Green"],
         "connections": [
             "chikkabidarakallu"
         ]
@@ -751,7 +751,7 @@
         "name":"Ragigudda",  
         "lat": 12.916955094578647, 
         "lon": 77.5881682242188,
-        "line": "Yellow",
+        "lines": ["Yellow"],
         "connections": [
             "rashtreeya_vidyalaya_road",
             "jayadeva_hospital"
@@ -762,7 +762,7 @@
         "name":"Jayadeva Hospital",  
         "lat": 12.916722846512402, 
         "lon": 77.60008897526072,
-        "line": "Interchange",
+        "lines": ["Yellow", "Pink"],
         "connections": [
             "ragigudda",
             "btm_layout"
@@ -773,7 +773,7 @@
         "name":"BTM Layout",  
         "lat": 12.916456615311018, 
         "lon": 77.60805026704908,
-        "line": "Yellow",
+        "lines": ["Yellow"],
         "connections": [
             "jayadeva_hospital",
             "central_silk_board"
@@ -784,7 +784,7 @@
         "name":"Central Silk Board",  
         "lat": 12.91639387111091, 
         "lon": 77.62054936106136,
-        "line": "Interchange",
+        "lines": ["Yellow", "Blue"],
         "connections": [
             "btm_layout",
             "bommanahalli"
@@ -795,7 +795,7 @@
         "name":"Bommanahalli",  
         "lat": 12.910700214593557, 
         "lon": 77.62633862472171,
-        "line": "Yellow",
+        "lines": ["Yellow"],
         "connections": [
             "central_silk_board",
             "hongasandra"
@@ -806,7 +806,7 @@
         "name":"Hongasandra",  
         "lat": 12.90166985548721, 
         "lon": 77.6319659382124,
-        "line": "Yellow",
+        "lines": ["Yellow"],
         "connections": [
             "bommanahalli",
             "kudlu_gate"
@@ -817,7 +817,7 @@
         "name":"Kudlu Gate",  
         "lat": 12.889989212014854, 
         "lon": 77.63916043821227,
-        "line": "Yellow",
+        "lines": ["Yellow"],
         "connections": [
             "hongasandra",
             "singasandra"
@@ -828,7 +828,7 @@
         "name":"Singasandra",  
         "lat": 12.880627033721462, 
         "lon": 77.64483445541244,
-        "line": "Yellow",
+        "lines": ["Yellow"],
         "connections": [
             "kudlu_gate",
             "hosa_road"
@@ -839,7 +839,7 @@
         "name":"Hosa Road",  
         "lat": 12.87012740954581, 
         "lon": 77.65273343821202,
-        "line": "Yellow",
+        "lines": ["Yellow"],
         "connections": [
             "singasandra",
             "beratena_agrahara"
@@ -850,7 +850,7 @@
         "name":"Beratena Agrahara",  
         "lat": 12.863634149170018, 
         "lon": 77.65788626704835,
-        "line": "Yellow",
+        "lines": ["Yellow"],
         "connections": [
             "hosa_road",
             "electronic_city"
@@ -861,7 +861,7 @@
         "name":"Electronic City",  
         "lat": 12.85638152573334, 
         "lon": 77.66342574428732,
-        "line": "Yellow",
+        "lines": ["Yellow"],
         "connections": [
             "beratena_agrahara",
             "konnapana_agrahara"
@@ -872,7 +872,7 @@
         "name":"Konnapana Agrahara",  
         "lat": 12.846218207690127, 
         "lon": 77.6711356334942,
-        "line": "Yellow",
+        "lines": ["Yellow"],
         "connections": [
             "electronic_city",
             "huskur_road"
@@ -883,7 +883,7 @@
         "name":"Huskur Road",  
         "lat": 12.838885432660632, 
         "lon": 77.67744418907328,
-        "line": "Yellow",
+        "lines": ["Yellow"],
         "connections": [
             "konnapana_agrahara",
             "hebbagodi"
@@ -894,7 +894,7 @@
         "name":"Hebbagodi",  
         "lat": 12.82894775751748, 
         "lon": 77.68140580121417,
-        "line": "Yellow",
+        "lines": ["Yellow"],
         "connections": [
             "huskur_road",
             "bommasandra"
@@ -905,7 +905,7 @@
         "name":"Bommasandra",  
         "lat": 12.81930009527172, 
         "lon": 77.68833996005503,
-        "line": "Yellow",
+        "lines": ["Yellow"],
         "connections": [
             "hebbagodi"
         ]
