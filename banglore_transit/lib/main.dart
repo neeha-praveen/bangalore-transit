@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import '../widgets/timeline_step.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,7 +29,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class ResultScreen extends StatefulWidget {
-  final List steps;
+  final List<Map<String, dynamic>> steps;
   final double startLat;
   final double startLon;
   final double endLat;
@@ -87,6 +88,65 @@ class _ResultScreenState extends State<ResultScreen> {
     );
   }
 
+  String getTitle(Map step) {
+    switch (step["type"]) {
+      case "walk":
+        return "Walk";
+      case "metro":
+        return "${step["line"]} Line";
+      case "transfer":
+        return "Change";
+      case "exit":
+        return "Exit";
+      default:
+        return "";
+    }
+  }
+
+  String getSubtitle(Map step) {
+    switch (step["type"]) {
+      case "walk":
+        return "Walk to ${step["to"]} Metro Station";
+      case "metro":
+        return "${step["from"]} → ${step["to"]}";
+      case "transfer":
+        return "Change at ${step["at"]}";
+      case "exit":
+        return "Exit at ${step["at"]}";
+      default:
+        return "";
+    }
+  }
+
+  Color getStepColor(Map step) {
+    if (step["type"] == "metro") {
+      switch (step["line"]) {
+        case "Purple":
+          return Colors.purple;
+        case "Green":
+          return Colors.green;
+        case "Yellow":
+          return Colors.yellow.shade700;
+      }
+    }
+    return Colors.grey;
+  }
+
+  IconData getStepIcon(Map step) {
+    switch (step["type"]) {
+      case "walk":
+        return Icons.directions_walk;
+      case "metro":
+        return Icons.train;
+      case "transfer":
+        return Icons.sync_alt;
+      case "exit":
+        return Icons.flag;
+      default:
+        return Icons.directions;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final markers = <Marker>{
@@ -123,11 +183,15 @@ class _ResultScreenState extends State<ResultScreen> {
               padding: const EdgeInsets.all(16),
               itemCount: widget.steps.length,
               itemBuilder: (context, index) {
-                return Card(
-                  child: ListTile(
-                    leading: const Icon(Icons.directions),
-                    title: Text(widget.steps[index]),
-                  ),
+                final step = widget.steps[index];
+
+                return TimelineStep(
+                  title: getTitle(step),
+                  subtitle: getSubtitle(step),
+                  isLast: index == widget.steps.length - 1,
+                  isTransfer: step["type"] == "transfer",
+                  color: getStepColor(step),
+                  icon: getStepIcon(step),
                 );
               },
             ),
@@ -211,8 +275,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
                     final data = jsonDecode(response.body);
 
-                    final directions =
-                        (data["directions"] as List?)?.cast<String>() ?? [];
+                    final steps =
+                        (data["steps"] as List?)
+                            ?.cast<Map<String, dynamic>>() ??
+                        [];
 
                     final route =
                         (data["metroRoute"] as List?)
@@ -223,7 +289,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       context,
                       MaterialPageRoute(
                         builder: (_) => ResultScreen(
-                          steps: directions,
+                          steps: steps,
                           startLat: (data["from"]["lat"] as num).toDouble(),
                           startLon: (data["from"]["lon"] as num).toDouble(),
                           endLat: (data["to"]["lat"] as num).toDouble(),
