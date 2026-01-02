@@ -17,26 +17,55 @@ app.get("/", (req, res) => {
   res.json({ message: "Backend running!" });
 });
 
-function buildDirections(stationPath) {
+function buildSteps(stationPath) {
   const steps = [];
 
-  // Walk to first station
-  steps.push(`Walk to ${stationPath[0].name} Metro Station`);
+  // Walk step
+  steps.push({
+    type: "walk",
+    to: stationPath[0].name,
+  });
 
   let currentLine = stationPath[0].line;
-  steps.push(`Board ${currentLine} Line`);
+  let segmentStart = stationPath[0].name;
 
   for (let i = 1; i < stationPath.length; i++) {
     const curr = stationPath[i];
 
-    // Only announce when line ACTUALLY changes
-    if (curr.line !== currentLine && curr.line !== "Interchange") {
-      steps.push(`Change to ${curr.line} Line at ${stationPath[i - 1].name}`);
+    if (curr.line !== currentLine) {
+      // Finish previous metro segment
+      steps.push({
+        type: "metro",
+        line: currentLine,
+        from: segmentStart,
+        to: stationPath[i - 1].name,
+      });
+
+      // Transfer
+      steps.push({
+        type: "transfer",
+        at: stationPath[i - 1].name,
+      });
+
       currentLine = curr.line;
+      segmentStart = curr.name;
     }
   }
 
-  steps.push(`Exit at ${stationPath[stationPath.length - 1].name}`);
+  // Final metro segment
+  steps.push({
+    type: "metro",
+    line: currentLine,
+    from: segmentStart,
+    to: stationPath[stationPath.length - 1].name,
+  });
+
+  // Exit
+  steps.push({
+    type: "exit",
+    at: stationPath[stationPath.length - 1].name,
+  });
+
   return steps;
 }
 
@@ -114,7 +143,7 @@ app.post("/route", async (req, res) => {
       metroStations.find((s) => s.id === id)
     );
 
-    const directions = buildDirections(stationPath);
+    const steps = buildSteps(stationPath);
 
     res.json({
       success: true,
@@ -135,7 +164,7 @@ app.post("/route", async (req, res) => {
         line: s.line,
       })),
 
-      directions,
+      steps,
     });
 
 
