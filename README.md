@@ -21,9 +21,11 @@ A Flutter-based mobile app that helps users plan metro journeys across Bangalore
 Flutter App → REST API → Routing Engine → Map Visualization
 
 ## Screenshots
-![alt text](image.png | width=100)
-![alt text](image-1.png)
-![alt text](image-2.png)
+<p align="center">
+  <img src="image.png" width="250" />
+  <img src="image-1.png" width="250" />
+  <img src="image-2.png" width="250" />
+</p>
 
 ## Future Improvements
 - Bus + metro multimodal routing
