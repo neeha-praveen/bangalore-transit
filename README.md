@@ -1,4 +1,4 @@
-# Bangalore Public Transport Planner 🚇
+# Bangalore Public Transport Planner 
 
 A Flutter-based mobile app that helps users plan metro journeys across Bangalore.
 
