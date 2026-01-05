@@ -514,6 +514,7 @@ class _ResultScreenState extends State<ResultScreen> {
 class _HomeScreenState extends State<HomeScreen> {
   final fromController = TextEditingController();
   final toController = TextEditingController();
+  bool isLoading = false;
 
   @override
   Widget build(BuildContext context) {
@@ -541,62 +542,82 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(height: 24),
             SizedBox(
               width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () async {
-                  print("FIND ROUTE CLICKED");
-                  try {
-                    final response = await http.post(
-                      Uri.parse("http://10.0.2.2:4000/route"),
-                      headers: {"Content-Type": "application/json"},
-                      body: jsonEncode({
-                        "from": fromController.text,
-                        "to": toController.text,
-                      }),
-                    );
-
-                    if (response.statusCode != 200) {
-                      debugPrint("Server error: ${response.body}");
-                      return;
-                    }
-
-                    final data = jsonDecode(response.body);
-
-                    final steps = (data["steps"] as List)
-                        .map((e) => Map<String, dynamic>.from(e))
-                        .toList();
-
-                    final route =
-                        (data["metroRoute"] as List?)
-                            ?.cast<Map<String, dynamic>>() ??
-                        [];
-
-                    final segments =
-                        (data["segments"] as List?)
-                            ?.map((e) => Map<String, dynamic>.from(e))
-                            .toList() ??
-                        [];
-
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (_) => ResultScreen(
-                          steps: steps,
-                          startLat: (data["from"]["lat"] as num).toDouble(),
-                          startLon: (data["from"]["lon"] as num).toDouble(),
-                          endLat: (data["to"]["lat"] as num).toDouble(),
-                          endLon: (data["to"]["lon"] as num).toDouble(),
-                          metroRoute: route,
-                          segments: segments,
+              child: isLoading
+                  ? Column(
+                      children: const [
+                        CircularProgressIndicator(),
+                        SizedBox(height: 12),
+                        Text(
+                          "Waking up server…\nThis may take up to 30 seconds on first request",
+                          textAlign: TextAlign.center,
                         ),
-                      ),
-                    );
-                  } catch (e, stack) {
-                    debugPrint("ERROR: $e");
-                    debugPrintStack(stackTrace: stack);
-                  }
-                },
-                child: const Text("Find Route"),
-              ),
+                      ],
+                    )
+                  : ElevatedButton(
+                      onPressed: () async {
+                        setState(() => isLoading = true);
+                        try {
+                          final response = await http.post(
+                            Uri.parse(
+                              "https://bangalore-transit-backend.onrender.com/route",
+                            ),
+                            headers: {"Content-Type": "application/json"},
+                            body: jsonEncode({
+                              "from": fromController.text,
+                              "to": toController.text,
+                            }),
+                          );
+
+                          if (response.statusCode != 200) {
+                            debugPrint("Server error: ${response.body}");
+                            return;
+                          }
+
+                          final data = jsonDecode(response.body);
+
+                          final steps = (data["steps"] as List)
+                              .map((e) => Map<String, dynamic>.from(e))
+                              .toList();
+
+                          final route =
+                              (data["metroRoute"] as List?)
+                                  ?.cast<Map<String, dynamic>>() ??
+                              [];
+
+                          final segments =
+                              (data["segments"] as List?)
+                                  ?.map((e) => Map<String, dynamic>.from(e))
+                                  .toList() ??
+                              [];
+
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => ResultScreen(
+                                steps: steps,
+                                startLat: (data["from"]["lat"] as num)
+                                    .toDouble(),
+                                startLon: (data["from"]["lon"] as num)
+                                    .toDouble(),
+                                endLat: (data["to"]["lat"] as num).toDouble(),
+                                endLon: (data["to"]["lon"] as num).toDouble(),
+                                metroRoute: route,
+                                segments: segments,
+                              ),
+                            ),
+                          );
+                        } catch (e, stack) {
+                          debugPrint("ERROR: $e");
+                          debugPrintStack(stackTrace: stack);
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(content: Text("Network error")),
+                          );
+                        } finally {
+                          setState(() => isLoading = false);
+                        }
+                      },
+                      child: const Text("Find Route"),
+                    ),
             ),
           ],
         ),
