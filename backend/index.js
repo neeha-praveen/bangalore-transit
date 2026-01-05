@@ -13,6 +13,8 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
 app.use(cors());
 app.use(express.json());
 
+const PORT = process.env.PORT || 4000;
+
 app.get("/", (req, res) => {
   res.json({ message: "Backend running!" });
 });
@@ -142,6 +144,12 @@ app.post("/route", async (req, res) => {
         .slice(0, K);
     }
 
+    function sharedLine(a, b) {
+      if (!a?.lines || !b?.lines) return null;
+      return a.lines.find(l => b.lines.includes(l));
+    }
+
+
     const fromCandidates = findNearestStations(fromCoords, 5);
     const toCandidates = findNearestStations(toCoords, 5);
 
@@ -206,6 +214,30 @@ app.post("/route", async (req, res) => {
 
     const steps = buildSteps(stationPath);
 
+    const segments = [];
+
+    for (let i = 0; i < stationPath.length - 1; i++) {
+      const from = stationPath[i];
+      const to = stationPath[i + 1];
+
+      const line = sharedLine(from, to);
+
+      segments.push({
+        from: {
+          name: from.name,
+          lat: from.lat,
+          lon: from.lon,
+        },
+        to: {
+          name: to.name,
+          lat: to.lat,
+          lon: to.lon,
+        },
+        line, 
+      });
+    }
+
+
     res.json({
       success: true,
       from: {
@@ -224,7 +256,7 @@ app.post("/route", async (req, res) => {
         lon: s.lon,
         line: s.lines,
       })),
-
+      segments,
       steps,
     });
 
@@ -240,6 +272,6 @@ app.get("/metro-stations", (req, res) => {
 });
 
 
-app.listen(4000, () => {
-  console.log("Server running on port 4000");
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
